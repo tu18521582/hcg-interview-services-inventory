@@ -10,8 +10,8 @@ import java.util.List;
 @Data
 @Builder
 public class RoomInfoDTO {
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private LocalDate checkInDate;
+    private LocalDate checkOutDate;
     private List<RoomAvailabilityDTO> roomAvailability;
     private List<RoomRateDTO> roomRate;
 }

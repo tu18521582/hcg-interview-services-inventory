@@ -1,8 +1,9 @@
 package com.example.demo.model;
+
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import jakarta.persistence.*;
 import java.time.LocalDate;
 
 
@@ -15,11 +16,9 @@ public class RoomAvailability {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "room_availability_id")
     private Long availabilityId;
-
     @ManyToOne
     @JoinColumn(name = "room_type_id")
     private RoomType roomType;
-
     @Column(name = "date")
     private LocalDate date;
     @Column(name = "number_of_rooms_available")

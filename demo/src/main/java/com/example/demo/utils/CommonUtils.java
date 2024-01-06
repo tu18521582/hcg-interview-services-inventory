@@ -11,15 +11,15 @@ import java.util.List;
 public class CommonUtils {
     public static RoomRateDTO mapRoomRateEntityToDTO(RoomRate roomRate) {
         return RoomRateDTO.builder()
-                .roomTypeId(roomRate.getRoomType().getRoomTypeId())
-                .ratePlanId(roomRate.getRatePlan().getRatePlanId())
+                .roomTypeId(roomRate.getRoomType().getId())
+                .ratePlanId(roomRate.getRatePlan().getId())
                 .price(roomRate.getPrice())
                 .build();
     }
 
     public static RoomAvailabilityDTO mapRoomAvailabilityEntityToDTO(RoomAvailability roomAvailability) {
         return RoomAvailabilityDTO.builder()
-                .roomTypeId(roomAvailability.getRoomType().getRoomTypeId())
+                .roomTypeId(roomAvailability.getRoomType().getId())
                 .availableToSell(roomAvailability.getNumberOfRoomsAvailable())
                 .build();
     }

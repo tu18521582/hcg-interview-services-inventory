@@ -1,9 +1,9 @@
 package com.example.demo.model;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
@@ -14,11 +14,12 @@ public class Hotel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "hotel_id")
     private Long hotelId;
-
     @Column(name = "hotel_name")
     private String hotelName;
-    @Column(name = "other_hotel_information")
-    private String otherHotelInformation;
+    @Column(name = "address")
+    private String address;
+    @Column(name = "phone_number")
+    private String phone_number;
     @OneToMany(mappedBy = "hotel")
     private List<RoomType> roomTypes;
 }

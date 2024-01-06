@@ -9,5 +9,6 @@ import java.util.List;
 
 @Repository
 public interface RoomRateRepository extends JpaRepository<RoomRate, Long> {
-    List<RoomRate> findByDateBetween(LocalDate startDate, LocalDate endDate);
+    List<RoomRate> findByDateBetween(LocalDate checkInDate, LocalDate checkOutDate);
+    List<RoomRate> findByRatePlanIdAndRoomTypeIdAndDateBetween(Long ratePlanId, Long roomTypeId, LocalDate checkInDate, LocalDate checkOutDate);
 }

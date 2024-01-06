@@ -1,10 +1,12 @@
 package com.example.demo.model;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
-import jakarta.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -21,11 +23,13 @@ public class Guest {
             joinColumns = @JoinColumn(name = "guest_id"),
             inverseJoinColumns = @JoinColumn(name = "booking_number")
     )
-    private List<Booking> bookings; //SET
+    private Set<Booking> bookings; //SET
 
     @Column(name = "guest_name")
+    @NotBlank
     private String guestName;
-
-    @Column(name = "contact_information")
-    private String contactInformation;
+    @Column(name = "email")
+    @NotBlank
+    @Email(message = "Email is not valid", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
+    private String email;
 }

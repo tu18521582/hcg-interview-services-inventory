@@ -1,9 +1,8 @@
 package com.example.demo.model;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import jakarta.persistence.*;
 
 @Entity
 @Getter
@@ -13,11 +12,9 @@ public class RatePlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "rate_plan_id")
-    private Long ratePlanId;
-
+    private Long id;
     @Column(name = "rate_plan_name")
     private String ratePlanName;
-
     @ManyToOne
     @JoinColumn(name = "hotel_id")
     private Hotel hotel;
